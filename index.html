@@ -163,6 +163,8 @@ br.sp { display: none; }
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  border: 0;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
@@ -663,9 +665,65 @@ p + p { margin-top: 1em; }
 .price-val { color: #d30005; }   /* 赤は価格表記（sale規範）——FV句点と並ぶ2箇所目で打ち止め */
 .entry-cta { margin-top: calc(var(--space-s) * 2); }
 .entry-note { margin-top: 16px; }
+.application-form {
+  width: min(720px, 100%);
+  margin: calc(var(--space-s) * 2) auto 0;
+  padding-top: calc(var(--space-s) * 1.5);
+  border-top: 1px solid var(--hairline);
+  text-align: left;
+}
+.form-lead {
+  margin-inline: auto;
+  text-align: center;
+  font-weight: 700;
+  max-width: 34em;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+  margin-top: var(--space-s);
+}
+.form-field {
+  display: grid;
+  gap: 8px;
+}
+.form-field--wide {
+  grid-column: 1 / -1;
+}
+.form-label {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  color: var(--mute);
+  letter-spacing: 0.08em;
+}
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  border: 1px solid var(--hairline);
+  background: #fff;
+  color: var(--ink);
+  padding: 13px 14px;
+  border-radius: 0;
+  line-height: 1.5;
+}
+.form-textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+.form-submit {
+  text-align: center;
+  margin-top: calc(var(--space-s) * 1.5);
+}
+.form-note {
+  margin: 14px auto 0;
+  text-align: center;
+}
 @media (max-width: 640px) {
   .entry-row { gap: 4px; }
   .entry-value { text-align: center; }
+  .form-grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- FAQ ---------- */
@@ -806,22 +864,22 @@ p + p { margin-top: 1em; }
 <section class="section section--hero fv" id="fv">
   <div class="container fv-top">
     <!-- 左上バッジ：セミナー名 -->
-    <p class="fv-badge">AI Brain Seminar<span class="fv-badge-sub">60min immersive session</span></p>
+    <p class="fv-badge">AI Brain Seminar<span class="fv-badge-sub">Zoom online session</span></p>
     <!-- 右上：開催情報 -->
     <p class="fv-date">
-      2026年7月28日(火)</br>21:00〜(60分)<!-- ※要差し替え：開催日 --><br>
+      2026年7月28日(火)<br>21:00〜<!-- ※要差し替え：開催日 --><br>
       オンライン開催<!-- ※要差し替え：会場・オンライン可否 -->
     </p>
   </div>
   <div class="container fv-main">
     <p class="fv-display">DON'T THINK.<br>SPARK.</p>
     <h1 class="fv-catch">考えるな<span class="k-comma">、</span>閃け<span class="spark-maru">。</span></h1>
-    <p class="fv-sub"><span class="lat">AI</span>に任せ、直感を爆発させる。<br>
-    <span class="lat">60</span>分で、脳の使い方を変える。</p>
+    <p class="fv-sub">ツールに振り回される側から、<br>
+    <span class="lat">AI</span>を使いこなす脳へ。</p>
   </div>
   <div class="container fv-cta-row">
     <!-- CTA① -->
-    <a class="cta" href="https://forms.gle/gMLkia3KR8AniQWf8" target="_blank" rel="noopener">AI脳にアプデートする</a>
+    <a class="cta" href="#application-form">脳をアプデートする</a>
   </div>
 </section>
 
@@ -831,17 +889,17 @@ p + p { margin-top: 1em; }
     <div class="intro-grid">
       <div>
         <p class="eyebrow reveal">Problem</p>
-        <h2 class="reveal">人間は考えすぎるほど、<br class="sp">動けなくなる<span class="red-text">。</span></h2>
+        <h2 class="reveal">「結局どれを使えばいい？」で、<br class="sp">止まっていませんか<span class="red-text">。</span></h2>
       </div>
       <div class="intro-lines reveal" data-delay="1">
-        <p class="intro-line"><span>Search</span>調べる</p>
-        <p class="intro-line"><span>Organize</span>まとめる</p>
-        <p class="intro-line"><span>Decide</span>迷う</p>
+        <p class="intro-line"><span>Tool</span>新ツールに焦る</p>
+        <p class="intro-line"><span>Info</span>情報に飲まれる</p>
+        <p class="intro-line"><span>Loop</span>結局、動けない</p>
       </div>
     </div>
     <div class="divide-panel reveal">
-      <p class="divide-panel-title">左脳の重労働を、AIへ。</p>
-      <p>あなたに残すのは、ひらめきと決断だけ。</p>
+      <p class="divide-panel-title">必要なのは、操作ノウハウではない。</p>
+      <p>探究心と言語化で、<span class="lat">AI</span>を使いこなす脳を作る。</p>
     </div>
   </div>
 </section>
@@ -850,11 +908,11 @@ p + p { margin-top: 1em; }
 <section class="section" id="concept">
   <div class="container">
     <p class="eyebrow reveal">Concept</p>
-    <h2 class="reveal"><span class="red-text">AI</span>は、外付け左脳。</h2>
+    <h2 class="reveal">左脳は<span class="red-text">AI</span>に。<br class="sp">右脳は自分に。</h2>
     <div class="concept-visual reveal">
       <div class="concept-visual-copy">
-        <p><strong>考える時間を、感じる時間へ。</strong></p>
-        <p>整理・言語化・比較は<span class="lat">AI</span>へ。あなたは、直感で選ぶ。</p>
+        <p><strong>情報を集めるより、自分に問う。</strong></p>
+        <p>「何ができるか」ではなく、「自分は何を求めているか」から始める。</p>
       </div>
       <figure class="concept-photo-frame" aria-label="AIを外付け左脳として使うイメージ">
         <img src="20260704_AI脳セミナーLP_assets/ai-nike-concept.gif" alt="行動直前の緊張感を表現したモノトーン写真" loading="lazy">
@@ -864,12 +922,12 @@ p + p { margin-top: 1em; }
       <div class="brain-card brain-card--cloud reveal">
         <p class="eyebrow">Left Brain</p>
         <p class="brain-title">左脳＝ロジックのプロセッサ</p>
-        <p>調べる。まとめる。言葉にする。</p>
+        <p>計画、逆算、整理、言語化。</p>
       </div>
       <div class="brain-card brain-card--ink reveal" data-delay="1">
         <p class="eyebrow">Right Brain</p>
         <p class="brain-title">右脳＝ビジョンのジェネレーター</p>
-        <p>閃く。選ぶ。動き出す。</p>
+        <p>ワクワク、違和感、問い、決断。</p>
       </div>
     </div>
   </div>
@@ -879,42 +937,42 @@ p + p { margin-top: 1em; }
 <section class="section" id="program">
   <div class="container">
     <p class="eyebrow reveal">Program</p>
-    <h2 class="reveal">脳を軽くする、<br><span class="red-text">4</span>つの操縦術</h2>
+    <h2 class="reveal">今日から使える、<br><span class="red-text">4</span>つのAI脳メソッド</h2>
     <div class="approach-grid">
       <article class="reveal">
         <p class="approach-head">
           <span class="approach-label">Approach</span>
           <span class="approach-num">01</span>
         </p>
-        <h3 class="approach-title">思考の言語化</h3>
-        <p>整える前に、出す。</p>
+        <h3 class="approach-title">探究心と言語化</h3>
+        <p>ツールではなく、問いから始める。</p>
       </article>
       <article class="reveal" data-delay="1">
         <p class="approach-head">
           <span class="approach-label">Approach</span>
           <span class="approach-num">02</span>
         </p>
-        <h3 class="approach-title">解釈の拡張</h3>
-        <p>不安を、別の見方に変える。</p>
+        <h3 class="approach-title">情報の選別力</h3>
+        <p>集めるより、選ぶ軸を持つ。</p>
       </article>
       <article class="reveal" data-delay="2">
         <p class="approach-head">
           <span class="approach-label">Approach</span>
           <span class="approach-num">03</span>
         </p>
-        <h3 class="approach-title">判断だけを行う</h3>
-        <p>選択肢は<span class="lat">AI</span>。最後は直感。</p>
+        <h3 class="approach-title">左脳と右脳の分業</h3>
+        <p>面倒な逆算は<span class="lat">AI</span>。最後は自分。</p>
       </article>
       <article class="reveal" data-delay="3">
         <p class="approach-head">
           <span class="approach-label">Approach</span>
           <span class="approach-num">04</span>
         </p>
-        <h3 class="approach-title">検索と整理の丸投げ</h3>
-        <p>情報を追わず、扱う。</p>
+        <h3 class="approach-title">目標の月次分解</h3>
+        <p>願望を、今月の一歩に変える。</p>
       </article>
     </div>
-    <p class="approach-plus reveal">＋ ポジティブ対話のライブデモ</p>
+    <p class="approach-plus reveal">＋ 事業計画・旅行・GTD・学習計画・人間関係の実例</p>
   </div>
 </section>
 
@@ -923,20 +981,20 @@ p + p { margin-top: 1em; }
   <div class="container">
     <div class="benefit-copy">
       <p class="eyebrow reveal">Benefit</p>
-      <h2 class="reveal">ひらめきが、<br class="sp">行動に変わる<span class="red-text">。</span></h2>
-      <p class="reveal"><span class="lat">AI</span>は否定しない。可能性を広げる。</p>
+      <h2 class="reveal">願望が、<br class="sp">今日の一歩に変わる<span class="red-text">。</span></h2>
+      <p class="reveal">今年、本当に叶えたい目標を、<span class="lat">AI</span>と一緒に月ごとの行動へ分解する。</p>
       <div class="bonus-panel reveal">
         <p class="eyebrow">Bonus</p>
-        <p class="bonus-title">魔法の設定プロンプト</p>
-        <p>当日、参加者限定で配布。</p>
+        <p class="bonus-title">参加者特典つき</p>
+        <p>40分無料AI相談「予祝×AIワーク」＋画像生成プロンプトパーツ資料。</p>
       </div>
       <div class="cta-mid reveal">
         <!-- CTA② -->
-        <a class="cta" href="https://forms.gle/gMLkia3KR8AniQWf8" target="_blank" rel="noopener">AI脳にアプデートする</a>
+        <a class="cta" href="#application-form">脳をアプデートする</a>
       </div>
     </div>
     <div class="benefit-visual reveal" data-delay="1">
-      <p>期待は、行動の燃料になる。</p>
+      <p>大きな目標を、動ける形へ。</p>
     </div>
   </div>
 </section>
@@ -954,7 +1012,7 @@ p + p { margin-top: 1em; }
         <p class="speaker-name">しんのすけ</p><!-- ※要差し替え：講師名 -->
         <p class="speaker-role"><span class="red-text">ただモノじゃないイラストレーター</span></p><!-- ※要差し替え：肩書き -->
         <p class="speaker-bio">現役イラスト・グラフィックデザイナーでありながらAIを駆使し、創造の領域を広げ続けるクリエイター。AIは「難しい道具」ではなく、人生を前に進める相棒として伝える講師。過去のAIセミナーの参加者数は累計150名越え。クリエイターならではの視点からAIとの関わり方を、わかりやすく伝えるプレゼンター</p>
-        <p class="speaker-note">言葉より先に、脳が動き出す<span class="lat">90</span>分。</p>
+        <p class="speaker-note">ツールより先に、脳の使い方を変える時間。</p>
       </div>
     </div>
   </div>
@@ -970,7 +1028,7 @@ p + p { margin-top: 1em; }
     <dl class="entry-list reveal">
       <div class="entry-row">
         <dt class="entry-label">Date</dt>
-        <dd class="entry-value">2026年7月28日（火）21:00〜（60分）</dd><!-- ※要差し替え：日時 -->
+        <dd class="entry-value">2026年7月28日（火）21:00〜</dd><!-- ※要差し替え：日時 -->
       </div>
       <div class="entry-row">
         <dt class="entry-label">Venue</dt>
@@ -982,13 +1040,56 @@ p + p { margin-top: 1em; }
       </div>
       <div class="entry-row">
         <dt class="entry-label">Style</dt>
-        <dd class="entry-value entry-value--style">60分・online</dd>
+        <dd class="entry-value entry-value--style">Zoomオンライン開催</dd>
       </div>
     </dl>
-    <div class="entry-cta reveal">
-      <!-- CTA③ -->
-      <a class="cta" href="https://forms.gle/gMLkia3KR8AniQWf8" target="_blank" rel="noopener">AI脳にアプデート</a>
-    </div>
+    <form class="application-form reveal" id="application-form" action="https://formsubmit.co/taishinillustration8686@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="AI脳セミナー申込">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://taishinillustration8686-cmd.github.io/ai-brain-seminar-lp/?submitted=true#entry">
+      <input type="hidden" name="_autoresponse" value="AI脳セミナーへのお申込みありがとうございます。内容を確認のうえ、決済方法と参加URLについてご案内します。">
+      <input type="text" name="_honey" style="display:none">
+      <p class="form-lead">必要事項を入力してお申し込みください。送信内容は運営メールへ通知されます。</p>
+      <div class="form-grid">
+        <label class="form-field">
+          <span class="form-label">お名前 *</span>
+          <input class="form-input" type="text" name="お名前" autocomplete="name" required>
+        </label>
+        <label class="form-field">
+          <span class="form-label">メールアドレス *</span>
+          <input class="form-input" type="email" name="email" autocomplete="email" required>
+        </label>
+        <label class="form-field">
+          <span class="form-label">参加方法 *</span>
+          <select class="form-select" name="参加方法" required>
+            <option value="">選択してください</option>
+            <option value="当日Zoom参加">当日Zoom参加</option>
+            <option value="アーカイブ視聴希望">アーカイブ視聴希望</option>
+          </select>
+        </label>
+        <label class="form-field">
+          <span class="form-label">決済方法 *</span>
+          <select class="form-select" name="決済方法" required>
+            <option value="">選択してください</option>
+            <option value="銀行振込">銀行振込</option>
+            <option value="U会員ポイント決済">U会員ポイント決済</option>
+          </select>
+        </label>
+        <label class="form-field form-field--wide">
+          <span class="form-label">今年、本当に叶えたい目標</span>
+          <textarea class="form-textarea" name="今年、本当に叶えたい目標" placeholder="例：自分の商品を作って販売したい、発信を継続したい、AIを仕事に取り入れたい"></textarea>
+        </label>
+        <label class="form-field form-field--wide">
+          <span class="form-label">質問・相談したいこと</span>
+          <textarea class="form-textarea" name="質問・相談したいこと" placeholder="セミナー内で知りたいことがあればご記入ください"></textarea>
+        </label>
+      </div>
+      <div class="form-submit">
+        <button class="cta" type="submit">申し込む</button>
+        <p class="note form-note">送信後、決済方法と参加URLについてメールでご案内します。</p>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -1007,15 +1108,15 @@ p + p { margin-top: 1em; }
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Q.</span>ワークはある？</summary>
-        <div class="faq-answer"><p>基本はありません。没入型の60分です。</p></div>
+        <div class="faq-answer"><p>あります。自分を知る3つの問いと、今年の目標をAIで月次目標に分解する実践があります。</p></div>
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Q.</span>オンライン参加は？</summary>
-        <div class="faq-answer"><p>ZOOMでご参加いただけます。※アーカイブ映像でも視聴可能です。</p></div><!-- ※要差し替え：オンライン可否 -->
+        <div class="faq-answer"><p>Zoomでご参加いただけます。質問やコメントはチャット欄で受け付けます。</p></div><!-- ※要差し替え：オンライン可否 -->
       </details>
       <details class="faq-item">
         <summary><span class="faq-q">Q.</span>支払い方法は？</summary>
-        <div class="faq-answer"><p>銀行振込もしくはU会員様はポイント決済が可能です。</br>詳しい決済方法は申込フォームからもご確認いただけます。</p></div><!-- ※要差し替え：支払い/キャンセルポリシー -->
+        <div class="faq-answer"><p>銀行振込、またはU会員様はポイント決済が可能です。お申し込み後にご案内します。</p></div><!-- ※要差し替え：支払い/キャンセルポリシー -->
       </details>
     </div>
   </div>
@@ -1031,7 +1132,7 @@ p + p { margin-top: 1em; }
     <p class="closing-lead reveal">脳の進化はこれからだ。</p>
     <div class="cta-block closing-cta reveal">
       <!-- CTA④：ink背景では白ピルに反転 -->
-      <a class="cta cta--inverse" href="https://forms.gle/gMLkia3KR8AniQWf8" target="_blank" rel="noopener">AI脳にUPdate</a>
+      <a class="cta cta--inverse" href="#application-form">脳をアプデートする</a>
     </div>
   </div>
 </section>
