@@ -665,65 +665,9 @@ p + p { margin-top: 1em; }
 .price-val { color: #d30005; }   /* 赤は価格表記（sale規範）——FV句点と並ぶ2箇所目で打ち止め */
 .entry-cta { margin-top: calc(var(--space-s) * 2); }
 .entry-note { margin-top: 16px; }
-.application-form {
-  width: min(720px, 100%);
-  margin: calc(var(--space-s) * 2) auto 0;
-  padding-top: calc(var(--space-s) * 1.5);
-  border-top: 1px solid var(--hairline);
-  text-align: left;
-}
-.form-lead {
-  margin-inline: auto;
-  text-align: center;
-  font-weight: 700;
-  max-width: 34em;
-}
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-  margin-top: var(--space-s);
-}
-.form-field {
-  display: grid;
-  gap: 8px;
-}
-.form-field--wide {
-  grid-column: 1 / -1;
-}
-.form-label {
-  font-size: var(--fs-small);
-  font-weight: 700;
-  color: var(--mute);
-  letter-spacing: 0.08em;
-}
-.form-input,
-.form-select,
-.form-textarea {
-  width: 100%;
-  border: 1px solid var(--hairline);
-  background: #fff;
-  color: var(--ink);
-  padding: 13px 14px;
-  border-radius: 0;
-  line-height: 1.5;
-}
-.form-textarea {
-  min-height: 112px;
-  resize: vertical;
-}
-.form-submit {
-  text-align: center;
-  margin-top: calc(var(--space-s) * 1.5);
-}
-.form-note {
-  margin: 14px auto 0;
-  text-align: center;
-}
 @media (max-width: 640px) {
   .entry-row { gap: 4px; }
   .entry-value { text-align: center; }
-  .form-grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- FAQ ---------- */
@@ -879,7 +823,7 @@ p + p { margin-top: 1em; }
   </div>
   <div class="container fv-cta-row">
     <!-- CTA① -->
-    <a class="cta" href="#application-form">脳をアプデートする</a>
+    <a class="cta" href="https://forms.gle/urKL7xCYiKNYVf1R6" target="_blank" rel="noopener">脳をアプデートする</a>
   </div>
 </section>
 
@@ -990,7 +934,7 @@ p + p { margin-top: 1em; }
       </div>
       <div class="cta-mid reveal">
         <!-- CTA② -->
-        <a class="cta" href="#application-form">脳をアプデートする</a>
+        <a class="cta" href="https://forms.gle/urKL7xCYiKNYVf1R6" target="_blank" rel="noopener">脳をアプデートする</a>
       </div>
     </div>
     <div class="benefit-visual reveal" data-delay="1">
@@ -1040,53 +984,10 @@ p + p { margin-top: 1em; }
         <dd class="entry-value entry-value--style">※Uポイント決済可</dd>
       </div>
     </dl>
-    <form class="application-form reveal" id="application-form" action="https://formsubmit.co/taishinillustration8686@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="AI脳セミナー申込">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://taishinillustration8686-cmd.github.io/ai-brain-seminar-lp/?submitted=true#entry">
-      <input type="hidden" name="_autoresponse" value="AI脳セミナーへのお申込みありがとうございます。内容を確認のうえ、決済方法と参加URLについてご案内します。">
-      <input type="text" name="_honey" style="display:none">
-      <p class="form-lead">必要事項を入力してお申し込みください。送信内容は運営メールへ通知されます。</p>
-      <div class="form-grid">
-        <label class="form-field">
-          <span class="form-label">お名前 *</span>
-          <input class="form-input" type="text" name="お名前" autocomplete="name" required>
-        </label>
-        <label class="form-field">
-          <span class="form-label">メールアドレス *</span>
-          <input class="form-input" type="email" name="email" autocomplete="email" required>
-        </label>
-        <label class="form-field">
-          <span class="form-label">参加方法 *</span>
-          <select class="form-select" name="参加方法" required>
-            <option value="">選択してください</option>
-            <option value="当日Zoom参加">当日Zoom参加</option>
-            <option value="アーカイブ視聴希望">アーカイブ視聴希望</option>
-          </select>
-        </label>
-        <label class="form-field">
-          <span class="form-label">決済方法 *</span>
-          <select class="form-select" name="決済方法" required>
-            <option value="">選択してください</option>
-            <option value="銀行振込">銀行振込</option>
-            <option value="U会員ポイント決済">U会員ポイント決済</option>
-          </select>
-        </label>
-        <label class="form-field form-field--wide">
-          <span class="form-label">今年、本当に叶えたい目標</span>
-          <textarea class="form-textarea" name="今年、本当に叶えたい目標" placeholder="例：自分の商品を作って販売したい、発信を継続したい、AIを仕事に取り入れたい"></textarea>
-        </label>
-        <label class="form-field form-field--wide">
-          <span class="form-label">質問・相談したいこと</span>
-          <textarea class="form-textarea" name="質問・相談したいこと" placeholder="セミナー内で知りたいことがあればご記入ください"></textarea>
-        </label>
-      </div>
-      <div class="form-submit">
-        <button class="cta" type="submit">申し込む</button>
-        <p class="note form-note">送信後、決済方法と参加URLについてメールでご案内します。</p>
-      </div>
-    </form>
+    <div class="entry-cta reveal">
+      <!-- CTA③ -->
+      <a class="cta" href="https://forms.gle/urKL7xCYiKNYVf1R6" target="_blank" rel="noopener">脳をアプデートする</a>
+    </div>
   </div>
 </section>
 
@@ -1129,7 +1030,7 @@ p + p { margin-top: 1em; }
     <p class="closing-lead reveal">脳の進化はこれからだ。</p>
     <div class="cta-block closing-cta reveal">
       <!-- CTA④：ink背景では白ピルに反転 -->
-      <a class="cta cta--inverse" href="#application-form">脳をアプデートする</a>
+      <a class="cta cta--inverse" href="https://forms.gle/urKL7xCYiKNYVf1R6" target="_blank" rel="noopener">脳をアプデートする</a>
     </div>
   </div>
 </section>
